@@ -15,7 +15,7 @@ const Foother = () => {
 
       <div className="text-black text-xs md:text-sm text-center mt-3">Sekretariat Belas Kasih</div>
       <div className="text-black text-xs md:text-sm text-center mt-1">JL. MAHKOTA ZAMBRUD NO.56, BABAKAN MADANG - BOGOR 16810</div>
-      <div className="text-black text-xs md:text-sm text-center mt-1">0812-3575-7667</div>
+      <div className="text-black text-xs md:text-sm text-center mt-1">0821-2441-5600</div>
       {/* <div className="flex justify-center gap-3 mt-5 text-lg">
         <FaInstagram />
         <FaFacebook />

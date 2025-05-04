@@ -12,6 +12,8 @@ const Form = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const isFormValid = nama && email && no_hp && alamat && jenisKartu;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setShowPopup(true); // hanya munculkan popup, belum redirect
@@ -19,7 +21,7 @@ const Form = () => {
 
   const handleSendToWhatsApp = () => {
     const message =
-      `*📄 Pendaftaran Kartu Kemanusiaan*\n\n` +
+      `*Pendaftaran Kartu Kemanusiaan*\n\n` +
       `*Nama:* ${nama}\n` +
       `*Email:* ${email}\n` +
       `*Nomor WhatsApp:* ${no_hp}\n` +
@@ -27,10 +29,10 @@ const Form = () => {
       `*Jenis Kartu:* ${jenisKartu}\n` +
       `*Harga:* ${jenisKartu === "Reguler" ? "Rp. 20.000" : "Rp. 10.000"} (Belum Termasuk Ongkos Kirim)\n\n` +
       `*Silakan balas pesan ini dengan mengirimkan foto Profile Anda untuk verifikasi.*\n\n` +
-      `Terima kasih atas partisipasi Anda! ❤️`;
+      `Terima kasih atas partisipasi Anda`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappLink = `https://wa.me/6281210681178?text=${encodedMessage}`;
+    const whatsappLink = `https://wa.me/6281235757667?text=${encodedMessage}`;
 
     window.open(whatsappLink, "_blank");
     setShowPopup(false);
@@ -82,12 +84,20 @@ const Form = () => {
               </div>
             </div>
 
-            {jenisKartu === "Reguler" && <p className="text-sm text-gray-700 mb-1">Harga: Rp. 20.000 (Belum Termasuk Ongkos Kirim)</p>}
-            {jenisKartu === "E-Money" && <p className="text-sm text-gray-700 mb-1">Harga: Rp. 100.000 (Belum Termasuk Ongkos Kirim)</p>}
+            {jenisKartu === "Reguler" && (
+              <p className="text-sm text-gray-700 mb-1">
+                Harga: <strong>Rp. 20.000 </strong> (Belum Termasuk Ongkos Kirim)
+              </p>
+            )}
+            {jenisKartu === "E-Money" && (
+              <p className="text-sm text-gray-700 mb-1">
+                Harga: <strong>Rp. 100.000 </strong> (Belum Termasuk Ongkos Kirim)
+              </p>
+            )}
 
             {/* Submit Button */}
             <div className="flex justify-end gap-3 mb-10">
-              <button type="submit" className={`bg-orange-600 px-7 py-2 text-white rounded-lg`}>
+              <button type="submit" className={`px-7 py-2 rounded-lg ${isFormValid ? "bg-orange-600 text-white" : "bg-gray-400 text-gray-200 cursor-not-allowed"}`} disabled={!isFormValid || isSubmitting}>
                 {isSubmitting ? "Mengirim..." : "Submit"}
               </button>
             </div>
