@@ -7,9 +7,9 @@ const Visi = () => {
       <HeaderTwo />
       <div className="px-4 py-4 border border-gray-400 rounded-lg mt-4 mb-4">
         <div className="flex gap-2 items-center mt-4">
-          <div className="px-2  border bg-[#A31D1D] text-white rounded-full">1</div>
+          <div className="px-2  border bg-orange-600 text-white rounded-full">1</div>
 
-          <h1 className="text-[#A31D1D] text-start font-bold text-xl">Tentang Kami</h1>
+          <h1 className="text-orange-600 text-start font-bold text-xl">Tentang Kami</h1>
         </div>
 
         <div className="mt-3">
