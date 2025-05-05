@@ -33,10 +33,9 @@ const Header = () => {
         </div>
       </div>
       <hr />
-      <div className="flex gap-2 items-center mt-4 justify-center bg-black px-4 py-2 text-white rounded-lg ">
-        {/* <div className="px-2  border bg-orange-600 text-white rounded-full">2</div> */}
+      {/* <div className="flex gap-2 items-center mt-4 justify-center bg-black px-4 py-2 text-white rounded-lg ">
         <h1 className="text-center font-medium text-lg md:text-xl ">Daftar</h1>
-      </div>
+      </div> */}
 
       <div className="flex gap-2 w-full text-center mt-5 mb-8 text-xs md:text-base ">
         <Link to="/tentang" className="w-full">

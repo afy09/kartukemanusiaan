@@ -40,8 +40,12 @@ const Form = () => {
 
   return (
     <>
-      <div className="flex gap-2 items-center justify-center my-4">
+      {/* <div className="flex gap-2 items-center justify-center my-4">
         <h1 className="text-black text-center font-bold text-[22px] md:text-[25px]">Formulir Kartu Kemanusiaan</h1>
+      </div> */}
+
+      <div className="flex gap-2 items-center mt-4 justify-center bg-black px-4 py-2 text-white rounded-lg ">
+        <h1 className="text-center font-medium text-lg md:text-xl ">Formulir Kartu Kemanusiaan</h1>
       </div>
       <div className="px-4 py-4 border border-gray-400 rounded-lg mt-4 mb-4">
         <div className={`${isExpanded ? "" : "max-h-[700px] overflow-hidden"}`}>
@@ -98,7 +102,7 @@ const Form = () => {
             {/* Submit Button */}
             <div className="flex justify-end gap-3 mb-10">
               <button type="submit" className={`px-7 py-2 rounded-lg ${isFormValid ? "bg-orange-600 text-white" : "bg-gray-400 text-gray-200 cursor-not-allowed"}`} disabled={!isFormValid || isSubmitting}>
-                {isSubmitting ? "Mengirim..." : "Submit"}
+                {isSubmitting ? "Mengirim..." : "Daftar"}
               </button>
             </div>
           </form>
