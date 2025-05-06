@@ -14,7 +14,7 @@ const Foother = () => {
       </div>
 
       <div className="text-black text-xs md:text-sm text-center mt-3">Yayasan Belas Kasih</div>
-      <div className="text-black text-xs md:text-sm text-center mt-1">JL. MAHKOTA PUTRS NO.1, SENTUL CITY - BOGOR 16810</div>
+      <div className="text-black text-xs md:text-sm text-center mt-1">JL. MAHKOTA PUTRA NO.1, SENTUL CITY - BOGOR 16810</div>
       <div className="text-black text-xs md:text-sm text-center mt-1">0821-2441-5600</div>
       {/* <div className="flex justify-center gap-3 mt-5 text-lg">
         <FaInstagram />
