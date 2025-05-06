@@ -27,7 +27,7 @@ const Form = () => {
       `*Nomor WhatsApp:* ${no_hp}\n` +
       `*Alamat Pengiriman:* ${alamat}\n` +
       `*Jenis Kartu:* ${jenisKartu}\n` +
-      `*Harga:* ${jenisKartu === "Reguler" ? "Rp. 20.000" : "Rp. 10.000"} (Belum Termasuk Ongkos Kirim)\n\n` +
+      `*Biaya Cetak:* ${jenisKartu === "Reguler" ? "Rp. 20.000" : "Rp. 10.000"} (Belum Termasuk Ongkir)\n\n` +
       `*Silakan balas pesan ini dengan mengirimkan foto Profile Anda untuk verifikasi.*\n\n` +
       `Terima kasih atas partisipasi Anda`;
 
@@ -90,7 +90,7 @@ const Form = () => {
 
             {jenisKartu === "Reguler" && (
               <p className="text-sm text-gray-700 mb-1">
-                Harga: <strong>Rp. 20.000 </strong> (Belum Termasuk Ongkos Kirim)
+                Biaya Cetak: <strong>Rp. 20.000 </strong> (Belum Termasuk Ongkir)
               </p>
             )}
             {jenisKartu === "E-Money" && (
@@ -99,9 +99,11 @@ const Form = () => {
               </p>
             )}
 
-            <div className="text-black">
-              <p className="text-sm mb-3 font-semibold">*Penerbitan Kartu Kemanusiaan custom akan dikenakan biaya pengganti cetak</p>
-            </div>
+            {!jenisKartu && (
+              <div className="text-black">
+                <p className="text-sm mb-3 font-semibold">*Penerbitan Kartu Kemanusiaan custom akan dikenakan biaya pengganti cetak</p>
+              </div>
+            )}
 
             {/* Submit Button */}
             <div className="flex justify-end gap-3 mb-10">
