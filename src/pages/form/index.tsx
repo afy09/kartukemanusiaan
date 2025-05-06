@@ -95,9 +95,13 @@ const Form = () => {
             )}
             {jenisKartu === "E-Money" && (
               <p className="text-sm text-gray-700 mb-1">
-                Harga: <strong>Rp. 100.000 </strong> (Belum Termasuk Ongkos Kirim)
+                Biaya Cetak: <strong>Rp. 100.000 </strong> (Belum Termasuk Ongkir)
               </p>
             )}
+
+            <div className="text-black">
+              <p className="text-sm mb-3 font-semibold">*Penerbitan Kartu Kemanusiaan custom akan dikenakan biaya pengganti cetak</p>
+            </div>
 
             {/* Submit Button */}
             <div className="flex justify-end gap-3 mb-10">
