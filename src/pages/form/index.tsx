@@ -28,7 +28,6 @@ const Form = () => {
       `*Alamat Pengiriman:* ${alamat}\n` +
       `*Jenis Kartu:* ${jenisKartu}\n` +
       `*Biaya Cetak:* ${jenisKartu === "Reguler" ? "Rp. 20.000" : "Rp. 10.000"} (Belum Termasuk Ongkir)\n\n` +
-      `*Silakan balas pesan ini dengan mengirimkan foto Profile Anda untuk verifikasi.*\n\n` +
       `Terima kasih atas partisipasi Anda`;
 
     const encodedMessage = encodeURIComponent(message);
