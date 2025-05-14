@@ -7,7 +7,7 @@ const merchandiseData = [
     id: 1,
     image: "/images/kaosorenbk.jpg",
     title: "Kaos Orange Belas Kasih",
-    price: "Rp120.000",
+    price: "Rp. 120.000",
     description: "Kaos berwarna orange berbahan cotton combed 24s yang adem dan nyaman dipakai sehari-hari. Dilengkapi sablon plastisol doff berkualitas tinggi yang tahan lama dan tampak elegan.",
     variant: ["S", "M", "L", "XL"],
   },
@@ -15,7 +15,7 @@ const merchandiseData = [
     id: 2,
     image: "/images/kaoshitambk.jpg",
     title: "Kaos Hitam Belas Kasih",
-    price: "Rp120.000",
+    price: "Rp. 120.000",
     description: "Kaos berwarna hitam berbahan cotton combed 24s yang adem dan nyaman dipakai sehari-hari. Dilengkapi sablon plastisol doff berkualitas tinggi yang tahan lama dan tampak elegan.",
     variant: ["S", "M", "L", "XL"],
   },
@@ -44,7 +44,7 @@ const MerchandiseDetail = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setShowPopup(true); // hanya munculkan popup, belum redirect
+    setShowPopup(true);
   };
 
   const handleSendToWhatsApp = () => {

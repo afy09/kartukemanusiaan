@@ -9,7 +9,7 @@ const merchandiseData = [
     id: 1,
     image: "/images/kaosorenbk.jpg",
     title: "Kaos Orange Belas Kasih",
-    price: "Rp120.000",
+    price: "Rp. 120.000",
     description: "Kaos berwarna orange berbahan cotton combed 24s yang adem dan nyaman dipakai sehari-hari. Dilengkapi sablon plastisol doff berkualitas tinggi yang tahan lama dan tampak elegan.",
     variant: ["S", "M", "L", "XL"],
   },
@@ -17,7 +17,7 @@ const merchandiseData = [
     id: 2,
     image: "/images/kaoshitambk.jpg",
     title: "Kaos Hitam Belas Kasih",
-    price: "Rp120.000",
+    price: "Rp. 120.000",
     description: "Kaos berwarna hitam berbahan cotton combed 24s yang adem dan nyaman dipakai sehari-hari. Dilengkapi sablon plastisol doff berkualitas tinggi yang tahan lama dan tampak elegan.",
     variant: ["S", "M", "L", "XL"],
   },
@@ -47,13 +47,32 @@ const settings = {
   ],
 };
 
-const truncateText = (text: any, limit: any) => {
-  return text.length > limit ? text.slice(0, limit) + "..." : text;
-};
-
 const Merchandise = ({ item }: any) => {
-  const [showFull, setShowFull] = useState(false);
-  const toggleShow = () => setShowFull(!showFull);
+  const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>({});
+
+  const handleSendToWhatsApp = (item: any) => {
+    const message =
+      `*Pembelian Merchandise*\n\n` +
+      `*Produk:* ${item.title}\n` +
+      `*Harga:* ${item.price} (Belum Termasuk Ongkir)\n` +
+      `*Jumlah:* \n` +
+      `*Ukuran:* \n` +
+      `*Nama:* \n` +
+      `*Alamat Pengiriman:* \n\n` +
+      `Terima kasih atas partisipasi Anda\n\n`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/6281235757667?text=${encodedMessage}`;
+    window.open(whatsappLink, "_blank");
+  };
+
+  const toggleShow = (id: any) => {
+    setExpandedItems((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
     <div className="px-4 py-8 max-w-6xl mx-auto">
       <div className=" mb-6 bg-black p-1 rounded-lg">
@@ -70,15 +89,19 @@ const Merchandise = ({ item }: any) => {
                   <h3 className="text-lg font-semibold  hover:underline cursor-pointer">{item.title}</h3>
                 </Link>
                 <p className="text-sm text-gray-600 mb-2">
-                  {showFull ? item.description : truncateText(item.description, 50)}
-                  {item.description.length > 50 && (
-                    <button onClick={toggleShow} className="ml-2 text-orange-600 font-semibold text-xs hover:underline">
-                      {showFull ? "Tutup" : "Selengkapnya"}
+                  {expandedItems[item.id] ? item.description : item.description.slice(0, 30) + (item.description.length > 30 ? "..." : "")}
+                  {item.description.length > 30 && (
+                    <button onClick={() => toggleShow(item.id)} className="ml-2 text-orange-600 font-semibold text-xs hover:underline">
+                      {expandedItems[item.id] ? "Tutup" : "Selengkapnya"}
                     </button>
                   )}
                 </p>
 
                 <p className="text-orange-600 font-bold">{item.price}</p>
+
+                <div onClick={() => handleSendToWhatsApp(item)} className="w-full bg-orange-600 rounded-lg text-white mt-3 px-3 py-1 flex justify-center hover:bg-orange-800 cursor-pointer">
+                  Order
+                </div>
               </div>
             </div>
           </div>
