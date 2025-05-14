@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Foother from "../../components/foother/foother";
+import Merchandise from "../../components/merchandise";
 
 const Form = () => {
   const [nama, setnama] = useState<string>("");
@@ -112,6 +113,11 @@ const Form = () => {
             </div>
           </form>
         </div>
+
+        <div className="my-3">
+          <hr />
+        </div>
+        <Merchandise />
         <Foother />
       </div>
 

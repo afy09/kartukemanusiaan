@@ -7,6 +7,7 @@ import Tentang from "./pages/menu/tentang";
 import Misi from "./pages/menu/misi";
 import Program from "./pages/menu/program";
 import Detail from "./pages/detail/index";
+import DetailMerchandise from "./pages/merchandise/detail";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/visimisi" element={<Misi />} />
           <Route path="/program" element={<Program />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/merchandise/:id" element={<DetailMerchandise />} />
         </Routes>
       </div>
     </Router>
